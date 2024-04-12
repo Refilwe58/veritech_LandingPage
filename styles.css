@@ -1,0 +1,183 @@
+/* Resetting default margin and padding */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+header h1 {
+    margin: 0;
+    padding: 0;
+}
+
+.nav-toggle {
+    display: none;
+}
+
+
+/* Style the label */
+
+.nav-toggle-label {
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    padding: 10px 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+
+/* Style the hamburger icon */
+
+.nav-toggle-label span {
+    display: block;
+    height: 2px;
+    background-color: currentColor;
+    margin-bottom: 5px;
+    position: relative;
+    transition: background-color 0.3s ease;
+    width: 20px;
+}
+
+
+/* Add a different color to the hamburger icon on hover */
+
+.nav-toggle-label:hover span {
+    background-color: #ccc;
+}
+
+
+/* Hide the navigation by default */
+
+nav {
+    display: none;
+    flex-direction: column;
+}
+
+
+/* Display the navigation when the checkbox is checked */
+
+.nav-toggle:checked+nav {
+    display: flex;
+}
+
+
+/* Style the navigation links */
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin-bottom: 10px;
+}
+
+nav ul li a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+
+/* Add a different color to the navigation links on hover */
+
+nav ul li a:hover {
+    color: #007bff;
+}
+
+nav ul {
+    list-style: none;
+    text-decoration: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.promotion {
+    padding: 50px 0;
+}
+
+.card {
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.apply {
+    background-color: #f2f2f2;
+    padding: 50px 0;
+}
+
+.apply-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.apply-btn:hover {
+    background-color: #555;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        position: relative;
+    }
+    /* Move the navigation below the header on smaller screens */
+    nav {
+        display: flex;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        padding: 10px 0;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        z-index: 999;
+        flex-direction: column;
+    }
+    nav ul li {
+        margin-bottom: 0;
+    }
+    .nav-toggle:checked+nav {
+        display: flex;
+    }
+}
